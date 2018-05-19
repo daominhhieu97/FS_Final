@@ -1,0 +1,37 @@
+----------Varied-length record----------
+1. First-fit------------------
++ Raul		-1|Raul|
++ Zidane	-1|Raul|Zidane|
++ Owen		-1|Raul|Zidane|Owen|
++ Ronaldo	-1|Raul|Zidane|Owen|Ronaldo|
++ Beckham	-1|Raul|Zidane|Owen|Ronaldo|Beckham|
++ Carlos	-1|Raul|Zidane|Owen|Ronaldo|Beckham|Carlos|
+- Carlos	35|Raul|Zidane|Owen|Ronaldo|Beckham|*-1rlos|
+- Owen		14|Raul|Zidane|*35en|Ronaldo|Beckham|*-1rlos|
++ CR		35|Raul|Zidane|CR..|Ronaldo|Beckham|*-1rlos|
+- Zidane	7|Raul|*35dane|CR..|Ronaldo|Beckham|*-1rlos|
+- Beckham	27|Raul|*35dane|CR..|Ronaldo|*7ckham|*-1rlos|
+- Raul		2|*27ul|*35dane|CR..|Ronaldo|*7ckham|*-1rlos|
++ Zidane	2|*7ul|*35dane|CR..|Ronaldo|Zidane.|*-1rlos|
++ Bale		7|Bale|*35dane|CR..|Ronaldo|Zidane.|*-1rlos|
++ Cassilas	7|Bale|*35dane|CR..|Ronaldo|Zidane.|*-1rlos|Cassilas|
+Defragment	-1|Bale|CR..|Ronaldo|Zidane.|Cassilas|
+
+
+2. Best-fit------------------
++ Raul		-1|Raul|
++ Zidane	-1|Raul|Zidane|
++ Owen		-1|Raul|Zidane|Owen|
++ Ronaldo	-1|Raul|Zidane|Owen|Ronaldo|
++ Beckham	-1|Raul|Zidane|Owen|Ronaldo|Beckham|
++ Carlos	-1|Raul|Zidane|Owen|Ronaldo|Beckham|Carlos|
+- Carlos	35|Raul|Zidane|Owen|Ronaldo|Beckham|*-1rlos|
+- Owen		14|Raul|Zidane|*35en|Ronaldo|Beckham|*-1rlos|
++ CR		35|Raul|Zidane|CR..|Ronaldo|Beckham|*-1rlos|
+- Zidane	7|Raul|*35dane|CR..|Ronaldo|Beckham|*-1rlos|
+- Beckham	27|Raul|*35dane|CR..|Ronaldo|*7ckham|*-1rlos|
+- Raul		2|*27ul|*35dane|CR..|Ronaldo|*7ckham|*-1rlos|
++ Zidane	2|*27ul|Zidane|CR..|Ronaldo|*35ckham|*-1rlos|
++ Bale		27|Bale|Zidane|CR..|Ronaldo|*35ckham|*-1rlos|
++ Cassilas	27|Bale|Zidane|CR..|Ronaldo|*35ckham|*-1rlos|Cassilas|
+Defragment	-1|Bale|Zidane|CR..|Ronaldo|Cassilas|
