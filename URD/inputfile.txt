@@ -1,0 +1,146 @@
+3 0
+5 100 
+1 MUN
+1 MCY
+1 REL
+1 LIV
+1 JUV
+1 MUN Gea 
+1 MUN Bailly
+1 MUN Jones 
+1 MUN Rojo
+1 MUN Smalling
+1 MUN Sanchez
+1 MUN Pogba
+1 MUN Mata
+1 MUN Lukaku
+1 MUN Lingrad
+1 MUN Ibra
+1 MUN Martial
+1 MUN Blind
+1 MUN Young
+1 MUN Evra
+1 MUN Rasford
+1 MUN Herrera
+1 MUN Matic
+1 MUN Fellani
+1 MUN Valencia
+1 MCI Anderson
+1 MCI Kompany
+1 MCI Otamendi
+1 MCI Walker
+1 MCI Sagna
+1 MCI Bruyne
+1 MCI Aguero
+1 MCI Sane
+1 MCI Mandi
+1 MCI Toure
+1 MCI Jesus
+1 MCI Delph
+1 MCI Silva
+1 MCI Guardiola
+1 MCI Fernandino
+1 MCI Gundogan
+1 MCI Danilo
+1 MCI Stones
+1 MCI Bravo
+1 MCI De Silva
+1 REL Pepe
+1 REL Casilas
+1 REL Ozil
+1 REL Kaka
+1 REL Ronaldo
+1 REL CR7
+1 REL Raul
+1 REL Carlos
+1 REL Beckham
+1 REL Figo
+1 REL Bale
+1 REL Zidane
+1 REL Navas
+1 REL Owen
+1 REL Ramos 
+1 REL Benjema
+1 REL Isco
+1 REL Carjaval
+1 REL Marcelo
+1 REL James
+1 LIV Mane
+1 LIV Torres
+1 LIV Gerrard
+1 LIV Karius
+1 LIV Salah
+1 LIV Can
+1 LIV Miller
+1 LIV Firmino
+1 LIV Chamberlain
+1 LIV Kuyt
+1 LIV Lovren
+1 LIV Lallana
+1 LIV Clyne
+1 LIV Ings
+1 LIV Mignolet
+1 LIV Matip
+1 LIV Monero
+1 LIV Coutinho
+1 LIV Solanke
+1 LIV Chicharito
+1 JUV Dybala
+1 JUV Buffon
+1 JUV Higuain
+1 JUV Pirlo
+1 JUV Benatia
+1 JUV Chielline
+1 JUV Manduzkic
+1 JUV Bonucci
+1 JUV Sandro
+1 JUV Marchisio
+1 JUV Matuidi
+1 JUV Barzagi
+1 JUV Lichsteiner
+1 JUV Scigilio
+1 JUV Pijanic
+1 JUV Thiam
+1 JUV Cuadrado
+1 JUV Bello
+1 JUV Amauri
+1 JUV Nedved
+1 10 
+0 MUN
+1 REL Messi
+0 REL Ronaldo
+0 JUV Pirlo
+1 MCI Suarez
+0 LIV Torres
+0 LIV Gerrard
+1 REL Neymar
+0 REL Raul
+1 REL Xavi
+0 REL Kaka
+1 25
+1 BYN
+1 BYN Vidal
+1 BYN Neuer
+1 BYN Robben
+1 BYN Muller
+1 BYN Ribery
+1 BYN Hummels
+1 BYN Boateng
+1 BYN Reus
+1 BYN Lewandowski
+1 BYN Alaba
+1 BYN Bernat
+1 BYN Rafinha
+1 BYN Thiago
+1 BYN Kimmich
+1 BYN Coman
+1 BYN Rordriguez
+1 BYN Tolisso
+1 BYN Dorsch
+1 BYN Kloser
+1 BYN Gomez
+1 LIV Eriksen
+1 LIV Tung Moutain
+1 MCI Rooney
+1 JUV Bobbycharton
+1 JUV Benner
