@@ -38,7 +38,12 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -52,13 +57,13 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 98);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 22);
+            this.label1.Size = new System.Drawing.Size(148, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "FILEPATH";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox1
             // 
@@ -88,13 +93,13 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 150);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 22);
+            this.label2.Size = new System.Drawing.Size(192, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "SEASONS LIST";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // listBox1
             // 
@@ -112,30 +117,73 @@
             this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(211, 241);
+            this.listBox2.Location = new System.Drawing.Point(275, 241);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(502, 242);
+            this.listBox2.Size = new System.Drawing.Size(195, 242);
             this.listBox2.TabIndex = 7;
             // 
             // richTextBox1
             // 
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(13, 538);
+            this.richTextBox1.Location = new System.Drawing.Point(13, 552);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(701, 313);
+            this.richTextBox1.Size = new System.Drawing.Size(701, 299);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 504);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 508);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(284, 19);
+            this.label3.Size = new System.Drawing.Size(284, 31);
             this.label3.TabIndex = 10;
             this.label3.Text = "TRANSFERING DETAIL";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // listBox3
+            // 
+            this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 26;
+            this.listBox3.Location = new System.Drawing.Point(235, 91);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(195, 236);
+            this.listBox3.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 22);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "LAST SEASON";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(231, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 26);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "PRESENT SEASON";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listBox3);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(263, 150);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(451, 333);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "INFORMATION PLAYER";
             // 
             // Form1
             // 
@@ -152,11 +200,13 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,6 +224,10 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
