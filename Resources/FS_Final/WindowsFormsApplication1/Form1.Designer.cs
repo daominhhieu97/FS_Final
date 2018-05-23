@@ -82,6 +82,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = ".....";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -106,9 +107,9 @@
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(10, 241);
+            this.listBox1.Location = new System.Drawing.Point(13, 231);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(194, 242);
+            this.listBox1.Size = new System.Drawing.Size(194, 258);
             this.listBox1.TabIndex = 6;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -116,10 +117,10 @@
             // 
             this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(275, 241);
+            this.listBox2.ItemHeight = 26;
+            this.listBox2.Location = new System.Drawing.Point(19, 81);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(195, 242);
+            this.listBox2.Size = new System.Drawing.Size(195, 236);
             this.listBox2.TabIndex = 7;
             // 
             // richTextBox1
@@ -147,7 +148,7 @@
             this.listBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 26;
-            this.listBox3.Location = new System.Drawing.Point(235, 91);
+            this.listBox3.Location = new System.Drawing.Point(235, 81);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(195, 236);
             this.listBox3.TabIndex = 11;
@@ -176,6 +177,7 @@
             // 
             this.groupBox1.Controls.Add(this.listBox3);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.listBox2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(263, 150);
@@ -192,7 +194,6 @@
             this.ClientSize = new System.Drawing.Size(726, 873);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
