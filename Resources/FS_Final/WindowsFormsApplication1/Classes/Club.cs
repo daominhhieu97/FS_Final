@@ -4,7 +4,7 @@ using System.IO;
 
 namespace WindowsFormsApplication1.Classes
 {
-    internal class Club
+    internal class Club: ICloneable<Club>
     {
         List<Player> _lst_Players = new List<Player>();
         FileStream _fileRecords;
@@ -51,5 +51,19 @@ namespace WindowsFormsApplication1.Classes
 
         public void addPlayer(Player player) { }
         public void removePlayer(Player player) { }
+
+        public Club Clone()
+        {
+            Club deepCopy = new Club();
+            deepCopy.ClubName = this.ClubName;
+            
+            foreach(Player tmp in this.Lst_Players)
+            {
+                deepCopy.Lst_Players.Add(tmp.Clone());
+            }
+
+            deepCopy.FileRecords = this.FileRecords;
+            return deepCopy;
+        }
     }
 }

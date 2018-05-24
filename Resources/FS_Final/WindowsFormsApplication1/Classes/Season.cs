@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApplication1.Classes
 {
@@ -75,6 +76,9 @@ namespace WindowsFormsApplication1.Classes
                 _name = value;
             }
         }
+
+      
+
 
         public void insertClub(Club club) { }
         public void removeClub(Club club) { }

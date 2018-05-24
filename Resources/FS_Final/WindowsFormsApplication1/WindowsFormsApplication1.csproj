@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Classes\Club.cs" />
     <Compile Include="Classes\File.cs" />
+    <Compile Include="Classes\ICloneable.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\Season.cs" />
     <Compile Include="Classes\SystemProcessing.cs" />

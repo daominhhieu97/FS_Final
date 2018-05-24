@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1.Classes
         string _path;
         int checkAlgorithm;
         int numberSeasons;
-        List<Season> lst_Seasons;
+        List<Season> lst_Seasons = new List<Season>();
 
         public string Path
         {

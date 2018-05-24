@@ -22,5 +22,12 @@ namespace WindowsFormsApplication1.Classes
                 _name = value;
             }
         }
+
+        internal Player Clone()
+        {
+            Player deepCopy = new Player();
+            deepCopy.Name = this.Name;
+            return deepCopy;
+        }
     }
 }
