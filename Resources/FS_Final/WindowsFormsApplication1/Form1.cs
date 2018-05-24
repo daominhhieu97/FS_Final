@@ -12,10 +12,7 @@ using WindowsFormsApplication1.Classes;
 
 namespace WindowsFormsApplication1
 {
-    public interface ICloneable<T>
-    {
-        T Clone();
-    }
+    
 
     
 
@@ -39,9 +36,11 @@ namespace WindowsFormsApplication1
             //hien thi danh sach CAU THU len lIST BOX 2
             if (indexMuaGiai == 0)//neu la mua giai dau tien
             {
-               
+                
                 listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
                 listBox3.DisplayMember = "Name";
+                listBox2.DataSource = null; 
+                listBox2.Items.Clear();
             }
             else
             {

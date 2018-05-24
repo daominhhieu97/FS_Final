@@ -1,7 +1,7 @@
 3 0
 5 100 
 1 MUN
-1 MCY
+1 MCI
 1 REL
 1 LIV
 1 JUV
