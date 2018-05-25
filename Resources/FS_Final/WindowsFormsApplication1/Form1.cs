@@ -12,13 +12,10 @@ using WindowsFormsApplication1.Classes;
 
 namespace WindowsFormsApplication1
 {
-    
-
-    
-
     public partial class Form1 : Form
     {
-        Classes.File global_file = new Classes.File();
+        Classes.File global_file = new Classes.File(); // tao global file
+
         public Form1()
         {
             InitializeComponent();
@@ -27,52 +24,65 @@ namespace WindowsFormsApplication1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //lay du lieu can thiet: mua giai, club
-                //lay ten club
-            string club_name = listBox1.GetItemText(listBox1.SelectedItem);
-                //lay index mua giai
-            string[] muagiai_line = this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Split(' ');
-            int indexMuaGiai = int.Parse(muagiai_line[1]) - 1;
+            string club_name;
+            int indexMuaGiai;
+            layDuLieuClubVaMuaGiai(out club_name, out indexMuaGiai);
 
             //hien thi danh sach CAU THU len lIST BOX 2
             if (indexMuaGiai == 0)//neu la mua giai dau tien
             {
-                
-                listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
-                listBox3.DisplayMember = "Name";
-                listBox2.DataSource = null; 
-                listBox2.Items.Clear();
+                hienThiMuaGiaiDau(club_name, indexMuaGiai);
             }
             else
             {
-                if (global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name)!= null)
-                {
-                    listBox2.DataSource = global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
-                    listBox2.DisplayMember = "Name";
-                    listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
-                    listBox3.DisplayMember = "Name";
-                }
-                else
-                {
-                    listBox2.DataSource = null;
-                    listBox2.Items.Clear();
-                    listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
-                    listBox3.DisplayMember = "Name";
-                }
-               
-            }
-            
+                hienThiMuaGiaiConLai(club_name, indexMuaGiai);
 
+            }
+
+
+        }
+
+        private void layDuLieuClubVaMuaGiai(out string club_name, out int indexMuaGiai)
+        {
+            //lay ten club
+            club_name = listBox1.GetItemText(listBox1.SelectedItem);
+            //lay index mua giai
+            string[] muagiai_line = this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Split(' ');
+            indexMuaGiai = int.Parse(muagiai_line[1]) - 1;
+        }
+
+        private void hienThiMuaGiaiConLai(string club_name, int indexMuaGiai)
+        {
+            if (global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name) != null)
+            {
+                listBox2.DataSource = global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+                listBox2.DisplayMember = "Name";
+                listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+                listBox3.DisplayMember = "Name";
+            }
+            else
+            {
+                listBox2.DataSource = null;
+                listBox2.Items.Clear();
+                listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+                listBox3.DisplayMember = "Name";
+            }
+        }
+
+        private void hienThiMuaGiaiDau(string club_name, int indexMuaGiai)
+        {
+            listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+            listBox3.DisplayMember = "Name";
+            listBox2.DataSource = null;
+            listBox2.Items.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //CHON FILE
-            OpenFileDialog choofdlog = new OpenFileDialog();
-            choofdlog.Filter = "All Files (*.*)|*.*";
-            choofdlog.FilterIndex = 1;
-            choofdlog.Multiselect = false;
+            OpenFileDialog choofdlog = chonFile();
 
-            if (choofdlog.ShowDialog() == DialogResult.OK)
+            if (choofdlog.ShowDialog() == DialogResult.OK) // neu bam ok
             {
                 string sFileName = choofdlog.FileName; // lay file name
                 //khoi tao FileProcessing 
@@ -90,47 +100,67 @@ namespace WindowsFormsApplication1
                     khoiTaoFile(file, sr, out numSeasons, out checkAlgorithm, lst_Seasons);
 
                     int biendemmuagiai = 0; //bien dem xac dinh mua giai ban dau
-                  
-                    foreach (Season season in file.Lst_Seasons)// duyet qua tat ca cac mua giai trong FILE
-                    {
-              
-                        if (biendemmuagiai == 0)
-                        {
-                            khoiTaoChoSeason(sr, season,biendemmuagiai);
 
-                            khoiTaoClubChoSeason(sr, season);
+                    biendemmuagiai = xuliSeason(file, sr, biendemmuagiai);
 
-                            khoiTaoCauThuChoTungClub(sr, season);
-                           
-                        }
-              
-                        else // neu ko phai mua giai dau tien
-                        {
-                            khoiTaoChoSeason(sr, season, biendemmuagiai); // khoi tao cho season
-
-                            //khoi tao Clubs cho cho season
-                            ganDSMuaGiaiCu(file, biendemmuagiai, season);//gan CLUBS cu~ cho mua giai hien tai
-                            khoiTaoClubChoSeason(sr, season); // gan CLUBS cho SEASON hien tai
-
-                            //khoi tao Cau Thu cho cac Clubs
-                            khoiTaoCauThuChoTungClub(sr, season); //khoi tao cau thu cho tung CLUBS trong SEASON
-                        }
-                        biendemmuagiai++;
-                    }
-              
 
                     //luu thong tin vao bien toan cuc FILE
                     global_file = file;
 
                     //hien thi du lieu len GUI
-                        //hien thi combobox
-                    comboBox1.DataSource = file.Lst_Seasons;
-                    comboBox1.DisplayMember = "Name";
+                    hienThiMuaGiaiLenGUI(file);
                 }
-            }            
+            }
         }
 
-       
+        private void hienThiMuaGiaiLenGUI(Classes.File file)
+        {
+            //hien thi combobox
+            comboBox1.DataSource = file.Lst_Seasons;
+            comboBox1.DisplayMember = "Name";
+        }
+
+        private static int xuliSeason(Classes.File file, StreamReader sr, int biendemmuagiai)
+        {
+            foreach (Season season in file.Lst_Seasons)// duyet qua tat ca cac mua giai trong FILE
+            {
+
+                if (biendemmuagiai == 0)
+                {
+                    khoiTaoChoSeason(sr, season, biendemmuagiai);
+
+                    khoiTaoClubChoSeason(sr, season);
+
+                    khoiTaoCauThuChoTungClub(sr, season);
+
+                }
+
+                else // neu ko phai mua giai dau tien
+                {
+                    khoiTaoChoSeason(sr, season, biendemmuagiai); // khoi tao cho season
+
+                    //khoi tao Clubs cho cho season
+                    ganDSMuaGiaiCu(file, biendemmuagiai, season);//gan CLUBS cu~ cho mua giai hien tai
+                    khoiTaoClubChoSeason(sr, season); // gan CLUBS cho SEASON hien tai
+
+                    //khoi tao Cau Thu cho cac Clubs
+                    khoiTaoCauThuChoTungClub(sr, season); //khoi tao cau thu cho tung CLUBS trong SEASON
+                }
+                biendemmuagiai++;
+            }
+
+            return biendemmuagiai;
+        }
+
+        private static OpenFileDialog chonFile()
+        {
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "All Files (*.*)|*.*";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = false;
+            return choofdlog;
+        }
+
         private static void ganDSMuaGiaiCu(Classes.File file, int biendemmuagiai, Season season)
         {
            foreach(Club club in file.Lst_Seasons[biendemmuagiai - 1].Lst_clubs)
@@ -238,24 +268,33 @@ namespace WindowsFormsApplication1
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //hien thi danh sach club trong mua giai do 
-
-            
             listBox1.Items.Clear();
 
             //lay index mua giai
-            string[] muagiai_line = this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Split(' ');
-            int indexMuaGiai = int.Parse(muagiai_line[1]) - 1;
+            int indexMuaGiai = layIndexMuaGiai();
 
             ////hien thi danh sach CLUB cua MUA GIAI len LIST BOX 1
+            hienThiDanhSachClubLenGUI(indexMuaGiai);
+
+            //hien thi danh sach CAU THU cua CLUB len LIST BOX 2
+
+        }
+
+        private int layIndexMuaGiai()
+        {
+            string[] muagiai_line = this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Split(' ');
+            int indexMuaGiai = int.Parse(muagiai_line[1]) - 1;
+            return indexMuaGiai;
+        }
+
+        private void hienThiDanhSachClubLenGUI(int indexMuaGiai)
+        {
             foreach (Club club in global_file.Lst_Seasons[indexMuaGiai].Lst_clubs)
             {
 
                 listBox1.Items.Add(club);
             }
             listBox1.DisplayMember = "ClubName";
-
-            //hien thi danh sach CAU THU cua CLUB len LIST BOX 2
-
         }
     }
 }
