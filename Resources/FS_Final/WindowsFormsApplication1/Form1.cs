@@ -44,11 +44,21 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                if (global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name)!= null)
+                {
+                    listBox2.DataSource = global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+                    listBox2.DisplayMember = "Name";
+                    listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+                    listBox3.DisplayMember = "Name";
+                }
+                else
+                {
+                    listBox2.DataSource = null;
+                    listBox2.Items.Clear();
+                    listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
+                    listBox3.DisplayMember = "Name";
+                }
                
-                listBox2.DataSource = global_file.Lst_Seasons[indexMuaGiai-1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
-                listBox2.DisplayMember = "Name";
-                listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
-                listBox3.DisplayMember = "Name";
             }
             
 
