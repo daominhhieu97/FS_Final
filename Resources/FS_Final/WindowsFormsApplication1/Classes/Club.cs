@@ -8,8 +8,10 @@ namespace WindowsFormsApplication1.Classes
     {
         List<Player> _lst_Players = new List<Player>();
         FileStream _fileRecords;
-        String _clubName; 
+        String _clubName;
+        ClubProcessing systemprocessing;
 
+      
         internal List<Player> Lst_Players
         {
             get
@@ -49,6 +51,19 @@ namespace WindowsFormsApplication1.Classes
             }
         }
 
+        internal ClubProcessing Systemprocessing
+        {
+            get
+            {
+                return systemprocessing;
+            }
+
+            set
+            {
+                systemprocessing = value;
+            }
+        }
+
         public void addPlayer(Player player) { }
         public void removePlayer(Player player) { }
 
@@ -61,8 +76,8 @@ namespace WindowsFormsApplication1.Classes
             {
                 deepCopy.Lst_Players.Add(tmp.Clone());
             }
-
             deepCopy.FileRecords = this.FileRecords;
+            deepCopy.systemprocessing = this.systemprocessing;
             return deepCopy;
         }
     }

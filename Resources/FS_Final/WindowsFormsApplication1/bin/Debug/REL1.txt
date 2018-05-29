@@ -1,0 +1,21 @@
++Pepe : -1 Pepe0 
++Casilas : -1 Pepe0 Casilas0 
++Ozil : -1 Pepe0 Casilas0 Ozil0 
++Kaka : -1 Pepe0 Casilas0 Ozil0 Kaka0 
++Ronaldo : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 
++CR7 : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 
++Raul : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 
++Carlos : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 
++Beckham : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 
++Figo : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 
++Bale : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 
++Zidane : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 
++Navas : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 
++Owen : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 
++Ramos : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 
++Benjema : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 Benjema0 
++Isco : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 Benjema0 Isco0 
++Carjaval : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 Benjema0 Isco0 Carjaval0 
++Marcelo : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 Benjema0 Isco0 Carjaval0 Marcelo0 
++James : -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 Benjema0 Isco0 Carjaval0 Marcelo0 James0 
+--------> DEFRAGMENTATION: -1 Pepe0 Casilas0 Ozil0 Kaka0 Ronaldo0 CR70 Raul0 Carlos0 Beckham0 Figo0 Bale0 Zidane0 Navas0 Owen0 Ramos0 Benjema0 Isco0 Carjaval0 Marcelo0 James0 

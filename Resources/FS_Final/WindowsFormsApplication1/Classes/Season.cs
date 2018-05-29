@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1.Classes
         int numClubChange;
         int numParticipantsChange;
         FileStream _fileRecords;
-
+        SeasonProcessing seasonnprocessing;
         internal List<Club> Lst_clubs
         {
             get
@@ -77,10 +77,18 @@ namespace WindowsFormsApplication1.Classes
             }
         }
 
-      
+        internal SeasonProcessing Seasonnprocessing
+        {
+            get
+            {
+                return seasonnprocessing;
+            }
 
+            set
+            {
+                seasonnprocessing = value;
+            }
+        }
 
-        public void insertClub(Club club) { }
-        public void removeClub(Club club) { }
     }
 }

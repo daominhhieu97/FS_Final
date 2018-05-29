@@ -1,0 +1,21 @@
++Mane : -1 Mane0 
++Torres : -1 Mane0 Torres0 
++Gerrard : -1 Mane0 Torres0 Gerrard0 
++Karius : -1 Mane0 Torres0 Gerrard0 Karius0 
++Salah : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 
++Can : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 
++Miller : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 
++Firmino : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 
++Chamberlain : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 
++Kuyt : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 
++Lovren : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 
++Lallana : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 
++Clyne : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 
++Ings : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 
++Mignolet : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 
++Matip : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 
++Monero : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 
++Coutinho : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 
++Solanke : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 Solanke0 
++Chicharito : -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 Solanke0 Chicharito0 
+--------> DEFRAGMENTATION: -1 Mane0 Torres0 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 Solanke0 Chicharito0 

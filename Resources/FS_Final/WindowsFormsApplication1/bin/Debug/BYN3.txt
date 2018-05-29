@@ -1,0 +1,21 @@
++Vidal : -1 Vidal0 
++Neuer : -1 Vidal0 Neuer0 
++Robben : -1 Vidal0 Neuer0 Robben0 
++Muller : -1 Vidal0 Neuer0 Robben0 Muller0 
++Ribery : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 
++Hummels : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 
++Boateng : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 
++Reus : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 
++Lewandowski : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 
++Alaba : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 
++Bernat : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 
++Rafinha : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 
++Thiago : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 
++Kimmich : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 
++Coman : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 
++Rordriguez : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 Rordriguez0 
++Tolisso : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 Rordriguez0 Tolisso0 
++Dorsch : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 Rordriguez0 Tolisso0 Dorsch0 
++Kloser : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 Rordriguez0 Tolisso0 Dorsch0 Kloser0 
++Gomez : -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 Rordriguez0 Tolisso0 Dorsch0 Kloser0 Gomez0 
+--------> DEFRAGMENTATION: -1 Vidal0 Neuer0 Robben0 Muller0 Ribery0 Hummels0 Boateng0 Reus0 Lewandowski0 Alaba0 Bernat0 Rafinha0 Thiago0 Kimmich0 Coman0 Rordriguez0 Tolisso0 Dorsch0 Kloser0 Gomez0 

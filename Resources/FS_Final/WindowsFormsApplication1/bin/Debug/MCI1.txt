@@ -1,0 +1,21 @@
++Anderson : -1 Anderson0 
++Kompany : -1 Anderson0 Kompany0 
++Otamendi : -1 Anderson0 Kompany0 Otamendi0 
++Walker : -1 Anderson0 Kompany0 Otamendi0 Walker0 
++Sagna : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 
++Bruyne : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 
++Aguero : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 
++Sane : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 
++Mandi : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 
++Toure : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 
++Jesus : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 
++Delph : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 
++Silva : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 
++Guardiola : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 
++Fernandino : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 
++Gundogan : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 Gundogan0 
++Danilo : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 Gundogan0 Danilo0 
++Stones : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 Gundogan0 Danilo0 Stones0 
++Bravo : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 Gundogan0 Danilo0 Stones0 Bravo0 
++De : -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 Gundogan0 Danilo0 Stones0 Bravo0 De0 
+--------> DEFRAGMENTATION: -1 Anderson0 Kompany0 Otamendi0 Walker0 Sagna0 Bruyne0 Aguero0 Sane0 Mandi0 Toure0 Jesus0 Delph0 Silva0 Guardiola0 Fernandino0 Gundogan0 Danilo0 Stones0 Bravo0 De0 

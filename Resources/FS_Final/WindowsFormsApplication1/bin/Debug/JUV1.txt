@@ -1,0 +1,21 @@
++Dybala : -1 Dybala0 
++Buffon : -1 Dybala0 Buffon0 
++Higuain : -1 Dybala0 Buffon0 Higuain0 
++Pirlo : -1 Dybala0 Buffon0 Higuain0 Pirlo0 
++Benatia : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 
++Chielline : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 
++Manduzkic : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 
++Bonucci : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 
++Sandro : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 
++Marchisio : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 
++Matuidi : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 
++Barzagi : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 
++Lichsteiner : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 
++Scigilio : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 
++Pijanic : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 
++Thiam : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 Thiam0 
++Cuadrado : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 Thiam0 Cuadrado0 
++Bello : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 Thiam0 Cuadrado0 Bello0 
++Amauri : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 Thiam0 Cuadrado0 Bello0 Amauri0 
++Nedved : -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 Thiam0 Cuadrado0 Bello0 Amauri0 Nedved0 
+--------> DEFRAGMENTATION: -1 Dybala0 Buffon0 Higuain0 Pirlo0 Benatia0 Chielline0 Manduzkic0 Bonucci0 Sandro0 Marchisio0 Matuidi0 Barzagi0 Lichsteiner0 Scigilio0 Pijanic0 Thiam0 Cuadrado0 Bello0 Amauri0 Nedved0 

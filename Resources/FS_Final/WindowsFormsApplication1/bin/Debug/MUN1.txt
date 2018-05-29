@@ -1,0 +1,21 @@
++Gea : -1 Gea0 
++Bailly : -1 Gea0 Bailly0 
++Jones : -1 Gea0 Bailly0 Jones0 
++Rojo : -1 Gea0 Bailly0 Jones0 Rojo0 
++Smalling : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 
++Sanchez : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 
++Pogba : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 
++Mata : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 
++Lukaku : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 
++Lingrad : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 
++Ibra : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 
++Martial : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 
++Blind : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 
++Young : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 
++Evra : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 
++Rasford : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 Rasford0 
++Herrera : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 Rasford0 Herrera0 
++Matic : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 Rasford0 Herrera0 Matic0 
++Fellani : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 Rasford0 Herrera0 Matic0 Fellani0 
++Valencia : -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 Rasford0 Herrera0 Matic0 Fellani0 Valencia0 
+--------> DEFRAGMENTATION: -1 Gea0 Bailly0 Jones0 Rojo0 Smalling0 Sanchez0 Pogba0 Mata0 Lukaku0 Lingrad0 Ibra0 Martial0 Blind0 Young0 Evra0 Rasford0 Herrera0 Matic0 Fellani0 Valencia0 

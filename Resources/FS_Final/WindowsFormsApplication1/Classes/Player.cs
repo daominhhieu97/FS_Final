@@ -9,6 +9,7 @@ namespace WindowsFormsApplication1.Classes
     class Player
     {
         String _name;
+        int vitrixoa = 0;
 
         public string Name
         {
@@ -20,6 +21,19 @@ namespace WindowsFormsApplication1.Classes
             set
             {
                 _name = value;
+            }
+        }
+
+        public int Vitrixoa
+        {
+            get
+            {
+                return vitrixoa;
+            }
+
+            set
+            {
+                vitrixoa = value;
             }
         }
 

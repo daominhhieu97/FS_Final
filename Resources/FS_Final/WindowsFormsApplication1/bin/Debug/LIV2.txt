@@ -1,0 +1,3 @@
+-Torres : 7 Mane0 Torres-1 Gerrard0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 Solanke0 Chicharito0 
+-Gerrard : 14 Mane0 Torres-1 Gerrard7 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 Solanke0 Chicharito0 
+--------> DEFRAGMENTATION: -1 Mane0 Karius0 Salah0 Can0 Miller0 Firmino0 Chamberlain0 Kuyt0 Lovren0 Lallana0 Clyne0 Ings0 Mignolet0 Matip0 Monero0 Coutinho0 Solanke0 Chicharito0 
