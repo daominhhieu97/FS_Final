@@ -100,16 +100,18 @@ namespace WindowsFormsApplication1.Classes
             return result;
         }
 
-        public void Defragment()
+        public string Defragment()
         {
             if (clubRecord[0].Index == -1)
-                return;
             for (int i = 0; i < clubRecord.Count; i++)
             {
                 if (clubRecord[i].Data[0] == '*')
                     clubRecord.RemoveAt(i);
             }
             clubRecord[0].Index = -1;
+
+            return display();
+            
         }
     }
 }

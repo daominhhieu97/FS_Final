@@ -53,18 +53,14 @@ namespace WindowsFormsApplication1
 
         private void hienThiMuaGiaiConLai(string club_name, int indexMuaGiai)
         {
-            if (global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name) != null)
+            if (global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name) != null) //neu co tham gia mua giai truoc 
             {
                 listBox2.DataSource = global_file.Lst_Seasons[indexMuaGiai - 1].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
                 listBox2.DisplayMember = "Name";
                 listBox3.DataSource = global_file.Lst_Seasons[indexMuaGiai].Lst_clubs.FirstOrDefault(club => club.ClubName == club_name).Lst_Players;
                 listBox3.DisplayMember = "Name";
-
-                
-
-
             }
-            else
+            else // neu ko tham gia mua giai truoc 
             {
                 listBox2.DataSource = null;
                 listBox2.Items.Clear();
@@ -84,9 +80,6 @@ namespace WindowsFormsApplication1
             //the previous season
             listBox2.DataSource = null;
             listBox2.Items.Clear();
-
-        
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,7 +90,8 @@ namespace WindowsFormsApplication1
             if (choofdlog.ShowDialog() == DialogResult.OK) // neu bam ok
             {
                 string sFileName = choofdlog.FileName; // lay file name
-                //khoi tao FileProcessing 
+
+                //tao moi  FileProcessing 
                 Classes.File file = new Classes.File();
                 file.Path = sFileName;
                 textBox1.Text = file.Path;
@@ -114,7 +108,6 @@ namespace WindowsFormsApplication1
                     int biendemmuagiai = 0; //bien dem xac dinh mua giai ban dau
 
                     biendemmuagiai = xuliSeason(file, sr, biendemmuagiai);
-
 
                     //luu thong tin vao bien toan cuc FILE
                     global_file = file;
@@ -138,36 +131,53 @@ namespace WindowsFormsApplication1
             {
                 if (biendemmuagiai == 0)
                 {
-                    khoiTaoChoSeason(sr, season, biendemmuagiai);
-
-                    khoiTaoClubChoSeason(sr, season,biendemmuagiai);
-
-                    khoiTaoCauThuChoTungClub(sr, season, biendemmuagiai);
-
+                    khoiTaoChoMuaGiaiDau(sr, biendemmuagiai, season);
                 }
 
                 else // neu ko phai mua giai dau tien
                 {
-                    khoiTaoChoSeason(sr, season, biendemmuagiai); // khoi tao cho season
-
-                    //khoi tao Clubs cho cho season
-                    ganDSMuaGiaiCu(file, biendemmuagiai, season);//gan CLUBS cu~ cho mua giai hien tai
-                    khoiTaoClubChoSeason(sr, season,biendemmuagiai); // gan CLUBS cho SEASON hien tai
-
-                    //khoi tao Cau Thu cho cac Clubs
-                    khoiTaoCauThuChoTungClub(sr, season, biendemmuagiai); //khoi tao cau thu cho tung CLUBS trong SEASON
+                    khoiTaoChoCacMuaGiaiTiepTheo(file, sr, biendemmuagiai, season);
                 }
 
                 //luu thong tin season vua roi vao file va gan cho global file
                 global_file = file;
 
-                
-
                 //tang bien dem mua giai
                 biendemmuagiai++;
             }
 
+            // deFragement cho toan bo season
+            doDefragmentForAllClubInSeason();
+
             return biendemmuagiai;
+        }
+
+        private void doDefragmentForAllClubInSeason()
+        {
+            string dataasstring = "-> DEFRAGMENTATION: " + global_file.Lst_Seasons.Last().Seasonnprocessing.Defragment() + '\n'; //your data
+            byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+            global_file.Lst_Seasons.Last().FileRecords.Write(info, 0, info.Length);
+        }
+
+        private void khoiTaoChoCacMuaGiaiTiepTheo(Classes.File file, StreamReader sr, int biendemmuagiai, Season season)
+        {
+            khoiTaoChoSeason(sr, season, biendemmuagiai); // khoi tao cho season
+
+            //khoi tao Clubs cho cho season
+            ganDSMuaGiaiCu(file, biendemmuagiai, season);//gan CLUBS cu~ cho mua giai hien tai
+            khoiTaoClubChoSeason(sr, season, biendemmuagiai); // gan CLUBS cho SEASON hien tai
+
+            //khoi tao Cau Thu cho cac Clubs
+            khoiTaoCauThuChoTungClub(sr, season, biendemmuagiai); //khoi tao cau thu cho tung CLUBS trong SEASON
+        }
+
+        private void khoiTaoChoMuaGiaiDau(StreamReader sr, int biendemmuagiai, Season season)
+        {
+            khoiTaoChoSeason(sr, season, biendemmuagiai);
+
+            khoiTaoClubChoSeason(sr, season, biendemmuagiai);
+
+            khoiTaoCauThuChoTungClub(sr, season, biendemmuagiai);
         }
 
         private static OpenFileDialog chonFile()
@@ -186,29 +196,35 @@ namespace WindowsFormsApplication1
                 season.Lst_clubs.Add(club.Clone());
             }
 
-      
-
         }
 
         private  void khoiTaoFile(Classes.File file, StreamReader sr, out int numSeasons, out int checkAlgorithm, List<Season> lst_Seasons)
         {
-            //lay thong tin 
+            //lay thong tin cho file 
             string[] first_line = sr.ReadLine().Split(' ');
             numSeasons = int.Parse(first_line[0]);
             checkAlgorithm = int.Parse(first_line[1]);
+
             //gan thong tin cho object FILE
             file.NumberSeasons = numSeasons;
             file.CheckAlgorithm = checkAlgorithm;
+
             //tao mang season
-            for (int i = 0; i < file.NumberSeasons; i++)
-            {
-                Season season = new Season();
-                season.Name = "Season " + (i + 1).ToString();
-                lst_Seasons.Add(season);
-            }
+            khoiTaoMangSeason(file, lst_Seasons);
+
             //gan mang season cho FILE
             file.Lst_Seasons = lst_Seasons;
             global_file = file;
+        }
+
+        private static void khoiTaoMangSeason(Classes.File file, List<Season> lst_Seasons)
+        {
+            for (int i = 0; i < file.NumberSeasons; i++)
+            {
+                Season season = new Season(); // khoi tao season
+                season.Name = "Season " + (i + 1).ToString(); // gan ten cho season
+                lst_Seasons.Add(season);
+            }
         }
 
         private  void khoiTaoCauThuChoTungClub(StreamReader sr, Season season,int biendemmuagiai)
@@ -218,61 +234,75 @@ namespace WindowsFormsApplication1
             {
                 //doc thong tin line cua cau thu 
                 string[] cauthu_line = sr.ReadLine().Split(' ');
-                int isAdded = int.Parse(cauthu_line[0]);
+                int isAdded = int.Parse(cauthu_line[0]); // kiem tra ADD hay DELETE
                 Club club = season.Lst_clubs.FirstOrDefault(x => x.ClubName == cauthu_line[1]);
                 //Them hoac xoa cau thu khoi doi bong
                 if (isAdded == 1)// them cau thu vao CLUB thich hop trong SEASON
                 {
-                    //khoi tao cau thu
-                    Player player = new Player();
-                    player.Name = cauthu_line[2];
-                    //them Player vao CLUB thich hop 
-                    club.Lst_Players.Add(player);
+                    themCauThuVaoClub(cauthu_line, club);
 
-                    //xu ly file 
-                    if(global_file.CheckAlgorithm == 1)
-                    {
-                        string dataasstring = "+" + player.Name + " : " + club.Systemprocessing.doFirstFitRecording(player) + '\n'; //your data
-                        byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                        club.FileRecords.Write(info, 0, info.Length);
-                    }
-                    else
-                    {
-                        string dataasstring = "+" + player.Name + " : " + club.Systemprocessing.doAddBestFit(player) + '\n'; //your data
-                        byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                        club.FileRecords.Write(info, 0, info.Length);
-                    }
-                   
                 }
                 else // xoa cau thu ra khoi CLUB thich hop trong SEASON
                 {
-                    //khoi tao cau thu
-                    Player player = new Player();
-                    player.Name = cauthu_line[2];
+                    xoaCauThuKhoiClub(cauthu_line, club);
 
-                    //xoa Player ra CLUB 
-                    club.Lst_Players.Remove(player);
-
-                    //xu ly file 
-                    if(global_file.CheckAlgorithm == 1)
-                    {
-                        string dataasstring = "-" + player.Name + " : " + club.Systemprocessing.doDeleteFirstFit(player) + '\n';
-                        byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                        club.FileRecords.Write(info, 0, info.Length);
-                    }
-                    else
-                    {
-                        string dataasstring = "-" + player.Name + " : " + club.Systemprocessing.doDeleteBestFit(player) + '\n';
-                        byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                        club.FileRecords.Write(info, 0, info.Length);
-                    }
-                    
                 }
             }
 
-            foreach(Club club in season.Lst_clubs)
-            {
+            doDefragmentForAllClubAllPlayerInSeason(season);
+        }
 
+        private void xoaCauThuKhoiClub(string[] cauthu_line, Club club)
+        {
+            //khoi tao cau thu
+            Player player = new Player();
+            player.Name = cauthu_line[2];
+
+            //xoa Player ra CLUB 
+            club.Lst_Players.Remove(player);
+
+            //xu ly file 
+            if (global_file.CheckAlgorithm == 1) // xoa theo kieu First Fit
+            {
+                string dataasstring = "-" + player.Name + " : " + club.Systemprocessing.doDeleteFirstFit(player) + '\n';
+                byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+                club.FileRecords.Write(info, 0, info.Length);
+            }
+            else // xoa theo kieu Best fit
+            {
+                string dataasstring = "-" + player.Name + " : " + club.Systemprocessing.doDeleteBestFit(player) + '\n';
+                byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+                club.FileRecords.Write(info, 0, info.Length);
+            }
+        }
+
+        private void themCauThuVaoClub(string[] cauthu_line, Club club)
+        {
+            //khoi tao cau thu
+            Player player = new Player();
+            player.Name = cauthu_line[2]; // GAN TEN CHO CAU THU
+                                          //them Player vao CLUB thich hop 
+            club.Lst_Players.Add(player);
+
+            //xu ly file 
+            if (global_file.CheckAlgorithm == 1) // 1 = > First Fit
+            {
+                string dataasstring = "+" + player.Name + " : " + club.Systemprocessing.doFirstFitRecording(player) + '\n'; //your data
+                byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+                club.FileRecords.Write(info, 0, info.Length);
+            }
+            else // Best Fit
+            {
+                string dataasstring = "+" + player.Name + " : " + club.Systemprocessing.doAddBestFit(player) + '\n'; //your data
+                byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+                club.FileRecords.Write(info, 0, info.Length);
+            }
+        }
+
+        private static void doDefragmentForAllClubAllPlayerInSeason(Season season)
+        {
+            foreach (Club club in season.Lst_clubs) // duyet tat ca cac CLUBs trong Season
+            {
                 string dataasstring = "--------> DEFRAGMENTATION: " + club.Systemprocessing.doDefragment() + '\n';
                 byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
                 club.FileRecords.Write(info, 0, info.Length);
@@ -286,46 +316,61 @@ namespace WindowsFormsApplication1
             {
                 //doc thong tin cua club trong season 
                 string[] club_line = sr.ReadLine().Split(' '); // doc thong tin
-                int isAdded = int.Parse(club_line[0]);
-                string nameClub = club_line[1];
+                int isAdded = int.Parse(club_line[0]); // lay ki tu dau tien
+                string nameClub = club_line[1]; // lay ki tu thu 2
+
                 //kiem tra them hoac xoa club
                 if (isAdded == 1) // them club vao mua giai  
                 {
-                    //khoi tao club
-                    Club club = new Club();
-                    club.ClubName = nameClub;
-                    club.Systemprocessing = new ClubProcessing();
-                    //them club vao LIST CLUB cua SEASON;
-                    season.Lst_clubs.Add(club);
-
-                    //them club vao season trong file theo dang fix length 
-                   
-                    string dataasstring = "+" + club.ClubName + " : " + season.Seasonnprocessing.AddRecord(club.ClubName) + '\n'; //your data
-                    byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                    season.FileRecords.Write(info, 0, info.Length);
+                    themClubVaoSeason(season, nameClub);
                 }
                 else // xoa CLUB ra khoi mua giai
                 {
-                    if(isAdded == 0)
+                    if (isAdded == 0)
                     {
-                        //khoi tao club
-                        Club club = season.Lst_clubs.FirstOrDefault(x => x.ClubName == nameClub);
-                        //xoa club ra khoi LIST CLUB cua SEASON
-                        season.Lst_clubs.Remove(club);
-
-                        //xoa club ra khoi Season va luu vao trong file
-                       string dataasstring = "-" + club.ClubName + " : " + season.Seasonnprocessing.DeleteRecord(club.ClubName) + '\n'; //your data
-                       byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                      season.FileRecords.Write(info, 0, info.Length);
+                        xoaClubKhoiSeason(season, nameClub);
                     }
                 }
             }
 
-            //tao file club cho season 
-            foreach(Club club in season.Lst_clubs)
+            //tao file RECORDING cho tung CLUBs trong season 
+            khoiTaoFileRecordingChoTungSeason(season, biendemmuagiai);
+        }
+
+        private static void khoiTaoFileRecordingChoTungSeason(Season season, int biendemmuagiai)
+        {
+            foreach (Club club in season.Lst_clubs)
             {
-                club.FileRecords = System.IO.File.Create(club.ClubName + (biendemmuagiai + 1).ToString() + ".txt"); 
+                club.FileRecords = System.IO.File.Create(club.ClubName + (biendemmuagiai + 1).ToString() + ".txt");
             }
+        }
+
+        private static void xoaClubKhoiSeason(Season season, string nameClub)
+        {
+            //khoi tao club
+            Club club = season.Lst_clubs.FirstOrDefault(x => x.ClubName == nameClub);
+            //xoa club ra khoi LIST CLUB cua SEASON
+            season.Lst_clubs.Remove(club);
+
+            //xoa club ra khoi Season va luu vao trong file CLUBS
+            string dataasstring = "-" + club.ClubName + " : " + season.Seasonnprocessing.DeleteRecord(club.ClubName) + '\n'; //your data
+            byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+            season.FileRecords.Write(info, 0, info.Length);
+        }
+
+        private static void themClubVaoSeason(Season season, string nameClub)
+        {
+            //khoi tao club
+            Club club = new Club(); // khoi tao club
+            club.ClubName = nameClub; // gan ten cho club
+            club.Systemprocessing = new ClubProcessing(); // khoi tao SystemProcessing cho CLUB
+                                                          //them club vao LIST CLUB cua SEASON;
+            season.Lst_clubs.Add(club);
+
+            //them club vao season trong file CLUBS theo dang fix length 
+            string dataasstring = "+" + club.ClubName + " : " + season.Seasonnprocessing.AddRecord(club.ClubName) + '\n'; //your data
+            byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+            season.FileRecords.Write(info, 0, info.Length);
         }
 
         private  void khoiTaoChoSeason(StreamReader sr, Season season, int biendemmuagiai)
@@ -354,7 +399,6 @@ namespace WindowsFormsApplication1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //hien thi danh sach club trong mua giai do 
             listBox1.Items.Clear();
 
             //lay index mua giai
