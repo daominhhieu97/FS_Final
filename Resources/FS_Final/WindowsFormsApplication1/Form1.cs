@@ -185,6 +185,9 @@ namespace WindowsFormsApplication1
             {
                 season.Lst_clubs.Add(club.Clone());
             }
+
+      
+
         }
 
         private  void khoiTaoFile(Classes.File file, StreamReader sr, out int numSeasons, out int checkAlgorithm, List<Season> lst_Seasons)
@@ -297,9 +300,9 @@ namespace WindowsFormsApplication1
 
                     //them club vao season trong file theo dang fix length 
                    
-                    //string dataasstring = "+" + club.ClubName + " : " + season.Seasonnprocessing.AddRecord(club.ClubName) + '\n'; //your data
-                    //byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                    //season.FileRecords.Write(info, 0, info.Length);
+                    string dataasstring = "+" + club.ClubName + " : " + season.Seasonnprocessing.AddRecord(club.ClubName) + '\n'; //your data
+                    byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+                    season.FileRecords.Write(info, 0, info.Length);
                 }
                 else // xoa CLUB ra khoi mua giai
                 {
@@ -311,10 +314,9 @@ namespace WindowsFormsApplication1
                         season.Lst_clubs.Remove(club);
 
                         //xoa club ra khoi Season va luu vao trong file
-                       
-                        //string dataasstring = "-" + club.ClubName + " : " + season.Seasonnprocessing.DeleteRecord(club.ClubName) + '\n'; //your data
-                        //byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
-                        //season.FileRecords.Write(info, 0, info.Length);
+                       string dataasstring = "-" + club.ClubName + " : " + season.Seasonnprocessing.DeleteRecord(club.ClubName) + '\n'; //your data
+                       byte[] info = new UTF8Encoding(true).GetBytes(dataasstring);
+                      season.FileRecords.Write(info, 0, info.Length);
                     }
                 }
             }
@@ -338,15 +340,15 @@ namespace WindowsFormsApplication1
             //gan thong tin mua giai 
             season.NumberClubChange = numClubChange;
             season.NumberParticipantsChange = numParticipantsChange;
-            
-            if(biendemmuagiai == 0)
+            if (biendemmuagiai == 0)
             {
-                season.FileRecords = System.IO.File.Create("CLUBS"  + ".txt");
+                season.FileRecords = System.IO.File.Create("CLUBS" + ".txt");
                 season.Seasonnprocessing = new SeasonProcessing();
             }
             else
             {
-                season.Seasonnprocessing = global_file.Lst_Seasons[biendemmuagiai - 1].Seasonnprocessing;
+                season.Seasonnprocessing = global_file.Lst_Seasons[biendemmuagiai - 1].Seasonnprocessing.Clone();
+                season.FileRecords = global_file.Lst_Seasons[biendemmuagiai - 1].FileRecords;
             }
         }
 

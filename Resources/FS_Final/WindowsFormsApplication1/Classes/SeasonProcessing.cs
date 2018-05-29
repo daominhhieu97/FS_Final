@@ -11,6 +11,16 @@ namespace WindowsFormsApplication1.Classes
         public List<Node> clubRecord = new List<Node>();
         private bool isEmpty = true;
 
+        public SeasonProcessing Clone()
+        {
+            SeasonProcessing CloneObj = new SeasonProcessing(); 
+            foreach(Node node in this.clubRecord)
+            {
+                CloneObj.clubRecord.Add(node);
+            }
+            CloneObj.isEmpty = this.isEmpty;
+            return CloneObj;
+        }
         public SeasonProcessing()
         {
 
@@ -85,7 +95,7 @@ namespace WindowsFormsApplication1.Classes
             string result = ""; 
             foreach(Node node in clubRecord)
             {
-                result += node.Data;
+                result += node.Data + " ";
             }
             return result;
         }
