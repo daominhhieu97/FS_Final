@@ -404,18 +404,24 @@ namespace WindowsFormsApplication1
             //lay index mua giai
             int indexMuaGiai = layIndexMuaGiai();
 
-            ////hien thi danh sach CLUB cua MUA GIAI len LIST BOX 1
+            ////hien thi danh sach CLUB cua MUA GIAI len LIST BOX
             hienThiDanhSachClubLenGUI(indexMuaGiai);
-
-            //hien thi danh sach CAU THU cua CLUB len LIST BOX 2
 
         }
 
         private int layIndexMuaGiai()
         {
-            string[] muagiai_line = this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Split(' ');
-            int indexMuaGiai = int.Parse(muagiai_line[1]) - 1;
-            return indexMuaGiai;
+            try
+            {
+                string[] muagiai_line = this.comboBox1.GetItemText(this.comboBox1.SelectedItem).Split(' ');
+                int indexMuaGiai = int.Parse(muagiai_line[1]) - 1;
+                return indexMuaGiai;
+            }
+            catch(IndexOutOfRangeException e)
+            {
+                throw e;
+            }
+            
         }
 
         private void hienThiDanhSachClubLenGUI(int indexMuaGiai)

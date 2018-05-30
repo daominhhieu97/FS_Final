@@ -8,8 +8,8 @@ namespace WindowsFormsApplication1.Classes
 {
     class ClubProcessing
     {
-        List<Player> lst = new List<Player>();
-        Player head = new Player();
+        List<Player> lst = new List<Player>(); //khoi tao danh sach cau thu cua club qua tung mua giai
+        Player head = new Player(); // bien head = "-1"
         public ClubProcessing()
         {
             Player head = new Player();
@@ -19,17 +19,17 @@ namespace WindowsFormsApplication1.Classes
 
         internal string doFirstFitRecording(Player player)
         {
-            Player player1 = player.Clone();
+            Player player1 = player.Clone(); // deep copy 
 
-            if (addCuoi(player1) == true)
+            if (addCuoi(player1) == true) // kiem tra add cuoi 
             {
-                lst.Add(player1);
+                lst.Add(player1); // add vao cuoi
             }
-            else
+            else // neu sai 
             {
-                addFirstFit(player1);
+                addFirstFit(player1); // add kieu first fit
             }
-            return (display());
+            return (display()); // tra ve mang player trong club
         }
 
 
@@ -37,12 +37,12 @@ namespace WindowsFormsApplication1.Classes
         {
             for (int i = 0; i < lst.Count; i++)
             {
-                if (lst[i].Vitrixoa != 0 && (lst[i].Name.Length >= player1.Name.Length))
+                if (lst[i].Vitrixoa != 0 && (lst[i].Name.Length >= player1.Name.Length)) // da tim thay vi tri thich hop
                 {
                     //them vao 
-                    lst[0].Name = lst[i].Vitrixoa.ToString();
-                    lst[i].Name = player1.Name + sodaucham(lst[i].Name.Length, player1.Name.Length);
-                    lst[i].Vitrixoa = 0;
+                    lst[0].Name = lst[i].Vitrixoa.ToString(); //doi cho vi tri xoa da luu voi head
+                    lst[i].Name = player1.Name + sodaucham(lst[i].Name.Length, player1.Name.Length); // gan player cu bang player moi 
+                    lst[i].Vitrixoa = 0; // gan lai vi tri xoa = 0
                     break;
                 }
             }
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1.Classes
         private string sodaucham(int length1, int length2)
         {
             string daucham = "";
-            for (int i = 0; i < Math.Abs(length1 - length2); i++)
+            for (int i = 0; i < Math.Abs(length1 - length2); i++) // chenh lech hai do dai
             {
                 daucham += ".";
             }
@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1.Classes
         private bool addCuoi(Player player1)
         {
             //case 1: chi co node head 
-            bool isOnlyHead = checkOnlyHead();
+            bool isOnlyHead = checkOnlyHead(); 
             //case 2: toan ko 
             bool checkAllZero = checkOnlyZero();
             //case 3: ko tim duoc vi tri thich hop tu cac node da xoa 
@@ -100,9 +100,9 @@ namespace WindowsFormsApplication1.Classes
             bool flag = false;
             foreach (Player tmp in lst)
             {
-                if (tmp.Vitrixoa != 0 && tmp.Name.Length >= player1.Name.Length)
+                if (tmp.Vitrixoa != 0 && tmp.Name.Length >= player1.Name.Length) // neu co vi tri thich hop
                 {
-                    flag = true;
+                    flag = true; // flag = true
                     return flag;
                 }
             }
@@ -132,10 +132,10 @@ namespace WindowsFormsApplication1.Classes
 
         internal  string doDeleteFirstFit(Player player)
         {
-            Player player1 = player.Clone();
-            Player tmp = lst.FirstOrDefault(x => x.Name == player1.Name);
-            tmp.Vitrixoa = int.Parse(lst[0].Name);
-            lst[0].Name = timvitri(player1);
+            Player player1 = player.Clone(); // deep copy
+            Player tmp = lst.FirstOrDefault(x => x.Name == player1.Name); // tim cau thu player can xoa trong list
+            tmp.Vitrixoa = int.Parse(lst[0].Name); // doi vi tri xoa cua Node = head.name
+            lst[0].Name = timvitri(player1); // gan head.name = vi tri xoa
             return (display());
         }
 
@@ -144,20 +144,20 @@ namespace WindowsFormsApplication1.Classes
             int vitrinodecanxoatheobit = 0;
             for (int i = 0; i < lst.Count; i++)
             {
-                if (i == 0)
+                if (i == 0) // neu la node dau 
                 {
                     vitrinodecanxoatheobit++;
                 }
                 else
                 {
-                    if (lst[i].Name == player1.Name)
+                    if (lst[i].Name == player1.Name) // neu la node can tim
                     {
-                        vitrinodecanxoatheobit++;
+                        vitrinodecanxoatheobit++; // tang 1 don vi cho bit
                         break;
                     }
                     else
                     {
-                        vitrinodecanxoatheobit += lst[i].Name.Length + 1;
+                        vitrinodecanxoatheobit += lst[i].Name.Length + 1; // vitrinodecanxoatheobit + do dai chuoi  +1 
                     }
                 }
             }
@@ -168,12 +168,12 @@ namespace WindowsFormsApplication1.Classes
         {
             foreach (Player player in lst.ToList())
             {
-                if (player.Vitrixoa != 0)
+                if (player.Vitrixoa != 0) // nhung thang da bi xoa
                 {
-                    lst.Remove(player);
+                    lst.Remove(player); //remove nhung node da bi xoa
                 }
             }
-            lst[0].Name = "-1";
+            lst[0].Name = "-1"; // head.name = "-1"
 
             return (display());
         }
@@ -195,7 +195,7 @@ namespace WindowsFormsApplication1.Classes
         private void addBestFit(Player player6)
         {
             //tim index thich hop 
-            int index = timindexvoitenplayernhonhat(player6);
+            int index = timindexvoitenplayernhonhat(player6); // tim index thich hop truoc khi chen
             //chen cau thu
             addPlayerBestFit(player6, index);
         }
